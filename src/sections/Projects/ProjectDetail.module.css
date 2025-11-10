@@ -1,0 +1,79 @@
+/* src/sections/Projects/ProjectDetail.module.css */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.backLink {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.backLink:hover {
+  opacity: 0.7;
+}
+
+.projectTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+/* ---- MEDIA ---- */
+.media {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.media img,
+.media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Ensure videos have no default black bars or outlines */
+.media video {
+  background-color: #000;
+}
+
+/* ---- SECTIONS ---- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.techList {
+  padding-left: 20px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (min-width: 800px) {
+  .container {
+    padding: 60px 20px;
+  }
+
+  .projectTitle {
+    font-size: 24px;
+  }
+}
+
