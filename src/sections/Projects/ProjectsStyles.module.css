@@ -4,9 +4,9 @@
     text-align: center;
     scroll-snap-align: start;
     height: 100vh;            /* desktop: fills screen */
-    padding-top: 3vh;
-    padding-bottom: 3vh;
-    gap: 10px;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    gap: 6px;
 
     /* fade + slide in animation */
     opacity: 0;
