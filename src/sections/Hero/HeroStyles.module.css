@@ -129,8 +129,8 @@
 
 @media (max-width: 799px) {
     .colorMode {
-        right: 14px;  /* pull it inward from the edge */
-        top: 8px;     /* a little down from the top of the image */
+        right: 50px;  /* pull it inward from the edge */
+        top: 40px;     /* a little down from the top of the image */
     }
 }
 
