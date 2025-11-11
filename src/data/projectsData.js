@@ -10,7 +10,7 @@ export const projects = [
     name: 'Soldy',
     gif: soldyGif,
     overview:
-      'Soldy is a budgeting app that helps users track expenses, visualize spending, and stay within monthly limits.',
+      'Soldy is a personal budget management app built in italian that helps users track their spending against predefined budgets, organized by categories.',
     techStack: ['React', 'Vite', 'CSS Modules'],
     githubUrl: 'https://github.com/giacomodemartinis/giacomo-demartinis-2',
   },
