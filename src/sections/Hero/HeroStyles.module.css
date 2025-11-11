@@ -6,6 +6,8 @@
     text-align: center;
     height: 100dvh;
     min-height: 500px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 
     .hero {
         max-width: 200px;
@@ -19,7 +21,7 @@
         a {
             margin: 0;
 
-            img{
+            img {
                 width: 30px;
             }
         }
@@ -73,7 +75,7 @@
     align-self: center;
 }
 
-.info{
+.info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,26 +83,47 @@
 }
 
 @media (min-width: 800px) {
-    .container{
+    .container {
         flex-direction: row-reverse;
         align-items: center;
-        justify-content: space-evenly;
-
-        .hero{
-            max-width:350px;
-            width: 350px;
-        }
+        justify-content: center;
+        gap: 60px;
+        width: 100%;
+        text-align: left;
     }
 
+    .info {
+        align-items: flex-start;
+    }
+
+    .description {
+        text-align: left;
+        align-self: flex-start;
+    }
+
+    .container span {
+        justify-content: flex-start;
+    }
+
+    .container a {
+        align-self: flex-start;
+    }
+
+    .hero {
+        max-width: 350px;
+        width: 350px;
+    }
 }
 
 @media (min-width: 1400px) {
-    .container{
-
-        .hero{
-            max-width:400px;
-            width: 400px;
-        }
+    .container {
+        gap: 80px;
     }
 
+    .hero {
+        max-width: 400px;
+        width: 400px;
+    }
 }
+
+

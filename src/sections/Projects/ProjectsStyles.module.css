@@ -2,25 +2,36 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    scroll-snap-align: start;
+    height: 100vh;            /* desktop: fills screen */
+    padding-top: 3vh;
+    gap: 10px;
 
-    img{
+    /* fade + slide in animation */
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeInUp 500ms ease-out 60ms forwards;
+
+    /* project images scoped */
+    img {
         max-width: 250px;
         align-self: center;
         background-color: var(--project-card-bg);
         border-radius: 20px;
+        transition: transform 0.25s ease;
     }
+}
 
-    a {
-        width: fit-content;
-        text-decoration: none;
-        color: #222;
-        transition: transform 200ms ease-in-out;
-    }
+a {
+    width: fit-content;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 200ms ease-in-out;
+}
 
-    a:hover {
-        transform: scale(1.05);
-    }
-        
+a:hover .container img,
+a:hover img {
+    transform: scale(1.05);
 }
 
 .projectsContainer {
@@ -30,6 +41,14 @@
     gap: 30px;
 }
 
+/* 👉 when screen is narrower, let the section grow so we can scroll */
+@media (max-width: 799px) {
+    .container {
+        height: auto;        /* allow it to get taller than viewport */
+        min-height: 100vh;   /* but still at least fill the screen */
+    }
+}
+
 @media (min-width: 800px) {
     .projectsContainer {
         flex-direction: row;
@@ -37,4 +56,40 @@
         justify-content: space-evenly;
         padding: 0 30px;
     }
+
+    .container img {
+        max-width: 220px;
+    }
 }
+
+@media (min-width: 1200px) {
+    .container img {
+        max-width: 250px;
+    }
+}
+
+/* ✨ animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .container {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+
+
+

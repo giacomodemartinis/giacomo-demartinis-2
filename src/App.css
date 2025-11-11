@@ -1,105 +1,133 @@
 :root {
-    --background-color: #fff;
-    --btn-color: #0987f2;
-    --btn-text-color: #fff;
-    --project-card-bg: #ffffff00;
-    --text-color: #222;
-    --form-text-color: #555;
-    --footer-text-color:#888;
+  --background-color: #fff;
+  --btn-color: #0987f2;
+  --btn-text-color: #fff;
+  --project-card-bg: transparent;
+  --text-color: #111;
+  --muted-text-color: #5f5f5f;
+  --footer-text-color: #888;
 }
 
 [data-theme='dark'] {
-    --background-color: #222;
-    --btn-color: #fff;
-    --btn-text-color: #222;
-    --project-card-bg: #fff;
-    --text-color: #fff;
-    --form-text-color: #fff;
-    --footer-text-color:#bbb;
+  --background-color: #1c1c1e; /* closer to iOS dark */
+  --btn-color: #fff;
+  --btn-text-color: #1c1c1e;
+  --project-card-bg: #fff;
+  --text-color: #fff;
+  --muted-text-color: #d1d1d6;
+  --footer-text-color: #bbb;
+}
+
+html,
+body {
+  width: 100%;
+  overflow: hidden; /* Scroll only inside #root */
 }
 
 body {
-    background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 60px;
+  background-color: var(--background-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ---------- SCROLL CONTAINER ---------- */
 #root {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
-h1, h2, h3, p {
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
+/* Hide scrollbar */
+#root::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+#root {
+  scrollbar-width: none;
 }
 
-h2, h3, p {
-    font-family: 'Roboto', monospace;
-}
-
-h1, h2 {
-    text-transform: uppercase;
-}
-
-h2, h3 {
-    font-size:20px;
+/* ---------- TYPOGRAPHY ---------- */
+h1,
+h2,
+h3,
+p {
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
-    fontsize: 32px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 p {
-    fnt-size: 16px;
-    font-weight: 300;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted-text-color);
 }
 
+/* ---------- SECTION TITLE (Products) ---------- */
 .sectionTitle {
-    margin-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 28px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-align: center;
 }
 
 .hover {
-    cursor: pointer
+  cursor: pointer;
 }
 
+/* ---------- RESPONSIVE TYPOGRAPHY ---------- */
 @media (width >= 800px) {
-    #root {
-        gap: 100px;
-
-    }
-    h1{
-        font-size: 40px;
-
-    }
-    h2,h3 {
-        font-size: 24px;
-    }
-    p {
-        font-size: 20px;
-    }
-    .sectionTitle {
-        margin-bottom: 60px;
-
-    }
-
-    @media (width >= 1400px) {
-        #root {
-            gap: 200px;
-
-        }
-        h1{
-            font-size: 48px;
-
-        }
-
-        .sectionTitle {
-            margin-bottom: 75px;
-            
-        }
-    }
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .sectionTitle {
+    margin-bottom: 48px;
+    font-size: 28px;
+  }
 }
+
+@media (width >= 1400px) {
+  h1 {
+    font-size: 46px;
+  }
+  .sectionTitle {
+    margin-bottom: 64px;
+    font-size: 30px;
+  }
+}
+
+
+
+
+
+
+

@@ -6,43 +6,59 @@
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 26px;
 }
 
+/* ---------- HEADER ---------- */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .backLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  font-weight: bold;
   text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  width: fit-content;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .backLink:hover {
-  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.backLink:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .projectTitle {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--text-color);
   text-transform: uppercase;
 }
 
-/* ---- MEDIA ---- */
+/* ---------- MEDIA ---------- */
 .media {
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
 }
 
-.media img,
-.media video {
+.media img {
   width: 100%;
   height: auto;
   display: block;
@@ -50,30 +66,133 @@
   object-fit: cover;
 }
 
-/* Ensure videos have no default black bars or outlines */
-.media video {
-  background-color: #000;
+/* ---------- SECTIONS ---------- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* ---- SECTIONS ---- */
-.section {
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.paragraph {
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* ---------- ACCORDION ---------- */
+.accordionItem {
+  border-radius: 14px;
+  overflow: hidden;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Light mode style */
+[data-theme='light'] .accordionItem {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode style */
+[data-theme='dark'] .accordionItem {
+  background: #2a2a2c;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Accordion button */
+.accordionButton {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: 16px 18px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.accordionButton:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme='dark'] .accordionButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chevron {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Accordion content */
+.accordionPanel {
+  padding: 0 18px 16px 18px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.techList {
-  padding-left: 20px;
+.list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-/* ---- RESPONSIVE ---- */
+.list li {
+  line-height: 1.5;
+  color: var(--text-color);
+  opacity: 0.95;
+}
+
+/* Dark mode text refinement */
+[data-theme='dark'] .list li {
+  color: #f2f2f7;
+  opacity: 1;
+}
+
+/* ---------- TECH STACK FORMATTING ---------- */
+.listHeading {
+  font-weight: 600;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.subItem {
+  padding-left: 14px;
+  list-style-type: disc;
+  opacity: 0.95;
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media (min-width: 800px) {
   .container {
     padding: 60px 20px;
   }
 
   .projectTitle {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .accordionButton {
+    font-size: 17px;
+    padding: 18px 22px;
   }
 }
+
+
+
 
