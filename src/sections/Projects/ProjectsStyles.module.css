@@ -5,6 +5,7 @@
     scroll-snap-align: start;
     height: 100vh;            /* desktop: fills screen */
     padding-top: 3vh;
+    padding-bottom: 3vh;
     gap: 10px;
 
     /* fade + slide in animation */
@@ -44,8 +45,11 @@ a:hover img {
 /* 👉 when screen is narrower, let the section grow so we can scroll */
 @media (max-width: 799px) {
     .container {
-        height: auto;        /* allow it to get taller than viewport */
-        min-height: 100vh;   /* but still at least fill the screen */
+        height: auto;
+        min-height: 100vh; /* still fills at least one screen */
+        animation: none;
+        opacity: 1;
+        transform: none;
     }
 }
 
